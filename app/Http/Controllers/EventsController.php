@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Date;
 
+
 class EventsController extends BaseController
 {
     /*
@@ -97,9 +98,8 @@ class EventsController extends BaseController
      */
 
     public function getEventsWithWorkshops() {
-        throw new \Exception('implement in coding task 1');
+        return response()->json(['data' => Event::with('workshops')->get(), 'success' => true], 200);
     }
-
 
     /*
     Requirements:
